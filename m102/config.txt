@@ -1,0 +1,40 @@
+var cfg = rs.conf()
+
+# 8 hours delay 
+cfg.members[2].slaveDelay = 8 * 3600 
+
+#print the new configuration
+cfg 
+
+#save the new configuration
+rs.reconfig(cfg)
+
+
+# make a server (with index 2 in the array) never to be allowed to be primary
+cfg.members[2].priority = 0;
+... and rs.reconfig(cfg)
+
+# hide a replice from being queried by clients
+cfg.members[2].hidden = true;
+... and rs.reconfig(cfg)
+
+# if it's hidden then it does not show in hosts output of rs,isMaster() command
+
+
+# connect to another host from within mongo shell client, e.g.
+var server2 = new Mongo('localhost:27002') 
+
+# connect to "test" db on server2
+
+var server2_test = server2.getDB('test')
+
+# find out which server I'm connected to
+db.isMaster.me 
+
+# look at the oplog
+
+db.oplog.rs.find().sort({$natural:-1}).limit(5)
+
+# look at the oplog of "remote" server 
+
+server2.oplog.rs.find().sort({$natural:-1}).limit(5)

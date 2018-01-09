@@ -1,0 +1,19 @@
+Set up a replica set that includes an arbiter.
+
+To demonstrate that you have done this, what is the text in the "state" field for the arbiter when you run rs.status()?
+
+solution:
+
+mkdir /data/arb
+
+mongod --dbpath arb --port 27004 --smallfiles --oplogSize 50 --replSet bazmeg
+
+
+#from primary host/primary member shell:
+
+bazmeg:PRIMARY> rs.addArb('bachatero:27004')
+
+bazmeg:PRIMARY> rs.status()
+
+=> the text in the "state" field is number "7"
+

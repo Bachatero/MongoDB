@@ -1,0 +1,18 @@
+db.products.insert({ "_id" : "ac9", "name" : "AC9 Phone", "brand" : "ACME", "type" : "phone", "price" : 333, "warranty_years" : 0.25, "available" : true })
+
+var myobject=db.products.findOne({_id : ObjectId("507d95d5719dbef170f15c00")})
+
+mybject.term_years=3
+
+db.products.save(myobject)
+or 
+db.products.update({"_id":ObjectId("507d95d5719dbef170f15c00")},myobject)
+
+db.products.findOne({_id : ObjectId("507d95d5719dbef170f15c00")})
+
+myobject.limits.sms.over_rate=0.01
+db.products.update({"_id":ObjectId("507d95d5719dbef170f15c00")},myobject)
+
+> homework.b()
+0.050.019031
+

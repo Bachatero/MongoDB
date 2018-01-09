@@ -1,0 +1,7 @@
+$set to set a new value
+   db.cars.update({"_id":100},{"$set":{"available":1}})
+
+$unset to delete a field
+$push to add/append s.t. to array/or create the array field if the array does not exist
+$addToSet to to add to set/array if not already present - it adds only ONCE compared to $push which adds multiple times
+$pop to remove from array

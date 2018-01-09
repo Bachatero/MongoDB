@@ -1,0 +1,297 @@
+x = { "a" : 1 };
+y = "b";
+x[y]++;
+b=1
+x[y]++;
+y = "b";
+x[y]++;
+b=1
+y = b;
+x[y]++;
+x = { "a" : 1 };
+x = { "a" : 1,  };
+x = { "a" : 1, "b" : 3  };
+y = "b";
+x[y]++;
+print(x.b);
+db.isMaster().maxBsonObjectSize
+use pcat
+show collections
+db.products.find({type:"case"}).count()
+db.products.find()
+// or:
+db.products.count()
+db.products.find({ $where "brand" == "ACME"});
+db.products.find({ $where "brand" == "ACME"})
+db.products.find({ $where "brand" == "ACME" })
+db.products.find({ $where "brand == ACME" })
+db.products.find({ $where "brand == ACME" });
+db.products.find({ $where: "brand == ACME" });
+db.products.find()
+db.products.find({ $where: "brand == ACME" });
+db.products.find({ $where: "brand" == ACME" });
+db.products.find({ $where: "brand" == "ACME" });
+db.products.find({ $where: "brand == ACME" });
+db.products.find()
+db.products.find({ $where: "brand == ACME" });
+show databases
+show dbs
+db
+help connect
+db.products.find({"brand == ACME" });
+db.products.find({"brand" : "ACME" });
+db.products.find({},{name:1,_id:0}).sort({name:1})
+var c = db.products.find({},{name:1,_id:0}).sort({name:1}); while( c.hasNext() ) print( c.next().name);
+var c = db.products.find({}).sort({name:1}); c.forEach( function(doc){ print(doc.name) } );
+var c = db.products.find({}).sort({name:-1}); while( c.hasNext() ) print( c.next().name);
+{   "hat" : "one",   "coat" : "z",   "hat" : "two" }
+{   "hat" : "one",   "coat" : "z",   "hat" : "two" }
+{   "hat" : "one",   "coat" : "z",   "hat1" : "two" }
+{"hat":"one","coat":"z","hat1":"two"}
+a={"hat":"one","coat":"z","hat1":"two"}
+a={"hat":"one","coat":"z","hat":"two"}
+sho dbs
+show dbs
+show dbs
+db
+sho collections
+show collections
+db.products.find({"for":"ac9"})
+db.products.find({"for":"ac9"}).addtoarray
+db.products.find({"for":"ac9"}).toarray
+db.products.find({"for":"ac9"}).pretty
+db.products.find({"for":"ac9"}).pretty()
+db.products.find({"for":"ac9","type":"accessory"}).pretty()
+db.products.find({"for":"ac9","type":"accessory"})
+db.products.find({"for":"ac9","type":"case"})
+db.products.find({"type":"case"})
+db.products.find({"for":"ac9","type":"case"})
+db.products.find({"for":"ac9" "$or" "type":"case"})
+db.products.find({"for":"ac9" $or "type":"case"})
+db.products.find($or {"for":"ac9"}, {"type":"case"})
+db.products.find($or: {"for":"ac9"}, {"type":"case"})
+db.products.find($or:[ {"for":"ac9"}, {"type":"case"}])
+db.products.find($or:[ {"for":"ac9"}, {"type":"case"]})
+db.products.find({$or:[ {"for":"ac9"}, {"type":"case"} ] } )
+show dbs
+use test
+db.temperature.insert({x:3,y:4})
+db.temperature.find()
+quit
+quit
+db
+show collect
+show collecti
+show collection
+show collections
+sho collectionsl
+sho collections
+show collections
+dbs
+show dbs
+show collections
+show db
+db
+show collections
+db
+show databases
+db.users.update({"_id":"Jane"},{ "$addToSet": {"likes":"football"}})
+show collections
+db.bergers.find({name:{$regex:"o",$gt:"o"}})
+db.bergers.find({name:{$regex:"o",$gt:"b"}})
+db.bergers.find({name:{$regex:"o",$gt:"d"}})
+db.bergers.find({name:{$regex:"o",$gt:"f"}})
+db.bergers.find({name:{$regex:"o",$gt:"h"}})
+db.bergers.find({name:{$regex:"o",$gt:"i"}})
+db.bergers.find({name:{$regex:"o",$gt:"j"}})
+db.bergers.find( { salary : { $gt : 50 }, score : { $lt : 60 } } );
+db.bergers.find( { salary : { $gt : 50 }, score : { $lt : 60000 } } );
+db.bergers.find( { salary : { $gt : 50 }, salary : { $lt : 60000 } } );
+db.bergers.find( { salary : { $gt : 50 }, salary : { $lt : 1000 } } );
+db.bergers.find( { salary : { $gt : 50 }, salary : { $lt : 1001 } } );
+db.bergers.find( { salary : { $gt : 50 }, salary : { $lt : 1005 } } );
+db.bergers.find( { salary : { $lt : 150 }, salary : { $gt : 1000 } } );
+db.bergers.find( { salary : { $lt : 150 }, salary : { $gt : 990 } } );
+db.bergers.find( { $and [salary : { $lt : 150 }, {$gt : 990 }] } );
+db.bergers.find({$and:[{name:{$regex:"^idt$"}},{salary:{$gt:800}}]})
+db.bergers.find({$and:[{name:{$regex:"^i$"}},{salary:{$gt:800}}]})
+db.bergers.find({$and:[{name:{$regex:"^i"}},{salary:{$gt:800}}]})
+db.bergers.find( { $and: [{salary : { $lt : 150 }, {$gt : 990 }}] } );
+db.bergers.find( { $and: [{salary : { $lt : 150 }, salary:{$gt : 990 }}] } );
+db.bergers.find( { salary : { $lt : 150 }, salary : { $gt : 990 } } );
+db.bergers.find( { salary : { $gt : 990 }, salary : { $lt : 150 } } );
+db.bergers.find( { $and: [{salary : { $lt : 150 }, salary:{$gt : 990 }}] } );
+db.bergers.find( { $or: [{salary : { $lt : 150 }, salary:{$gt : 990 }}] } );
+db.bergers.find({$and:[{name:{$regex:"^idiot$"}},{salary:{$gt:800}}]})
+//db.bergers.find({$and:[{name:{$regex:"^idiot$"}},{salary:{$gt:800}}]})
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990 }}}] } );
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990 }}}}] } );
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990}}}]   );
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990}}}]  } );
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990}}}]  } });
+db.bergers.find( { $and: [{salary : { $lt : 150 }}, {salary:{$gt : 990}}} });
+db.bergers.find( { $and: [{ "salary" : { $lt : 150 }}, {"salary":{$gt : 990}}} });
+db.bergers.find( { $and: [{ "salary" : { $lt : 150}}, {"salary":{$gt : 990}}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 150}}, {"salary":{$gt : 990}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1150}}, {"salary":{$gt : 990}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1150}}, {"salary":{$gt : 1000}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1000}}, {"salary":{$gt : 1000}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1000}}, {"salary":{$gt : 2000}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1000}}, {"salary":{$gt : 100}}] });
+db.bergers.find( { $and: [{ "salary" : { $lt : 1001}}, {"salary":{$gt : 100}}] });
+db.bergers.find( { $and: [{ "salary" : { $gt : 100}}, {"salary":{$lt : 1001}}] });
+db.bergers.find( { salary : { $gt : 990 , $lt : 150 } } );
+db.bergers.find( { salary : { $gt : 990 , $lt : 1500 } } );
+db.bergers.find( { salary : { $lt : 9 , $gt : 990 } } );
+db.bergers.find( { salary : { $lt : 1119 , $gt : 990 } } );
+db.bergers.find({fruit.apple})
+db.bergers.find({fruit:"apple"})
+db.bergers.find({"apple"})
+db.bergers.find({fruit:"apple"})
+db.bergers.find({fruit:"apple"}).pretty
+db.bergers.find({fruit:"apple"}).pretty()
+db.catalog.find({"price":{$gt:10000},"reviews.rating":{$gte:5}})
+db.bergers.find()
+db.bergers.save({"_id":ObjectId("544e758f74d9d51c27ce6288")},{telephone:[{"work":8888},{"home":9999}]})
+db.bergers.find()
+db.bergers.find().pretty
+db.bergers.find().pretty()
+db.bergers.insert({"_id":ObjectId("544e758f74d9d51c27ce6288")},{telephone:[{"work":8888},{"home":9999}]})
+;
+db.bergers.insert({"name":"berger","job":"idiot",telephone:[{"work":8888},{"home":9999}]})
+db.bergers.find().pretty()
+db.bergers.find()
+help
+db,help()
+db.help()
+sho collections
+show collections
+help
+help insert
+db.help() insert
+db.help() insert()
+help insert()
+db.bergers.find()
+db.bergers.insert({"name":berger},{"fruit":["apple","pear","peach","plum"]})
+db.bergers.insert({"name":"berger"},{"fruit":["apple","pear","peach","plum"]})
+db.bergers.find()
+db.bergers.save({"name":"berger"},{"fruit":["apple","pear","peach","plum"]})
+db.bergers.find()
+db.bergers.update({"name":"berger"},{"fruit":["apple","pear","peach","plum"]})
+db.bergers.find()
+db.bergers.update({"name":"berger"},{"fruit":["apple","pear","peach","plum1"]})
+db.bergers.find()
+db.bergers.update({"name":"berger"},{$set:{"fruit":["apple","pear","peach","plum"]}})
+db.bergers.find()
+db.bergers.update({"name":"berger"},{$set:{"fruit":["apple","pear","peach","plum"]}})
+db.bergers.find()
+db.bergers.update({"name":"berger"},{$set:{"phone":{"work":9999,"home":8888}}})
+db.bergers.find()
+db.bergers.find().pretty
+db.bergers.find().pretty()
+db.bergers.findOne().pretty()
+db.bergers.find().pretty()
+db.bergers.update({"name":"berger"},{$set:{"salary":1000}}})
+db.bergers.update({"name":"berger"},{$set:{"salary":1000}})
+db.bergers.find().pretty()
+db.bergers.find()
+db.users.update({"_id" : "myrnarackham"},{$set :{"country":"RU"}})
+use students
+show col
+show cols
+show coles
+show colecs
+show colects
+show colectis
+show c
+show co
+show cls
+show colections
+show col
+show coll
+show colls
+show collections
+db.grades.find()
+db.grades.count()
+;
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+db.grades.find({"_id":164})
+db.grades.find({"_id":"164"})
+db.grades.find({"student_id":"164"})
+db.grades.find()
+it
+db.grades.find({"student_id":164})
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}})
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}})
+db.grades.find()
+db.grades.find({"type":"exam"})
+db.grades.find({"type":"exam"},{$gte: {"score":65}})
+db.grades.find({"type":"exam"},{$gte:{"score":65}})
+db.grades.find({"type":"exam"},{"$gte":{"score":65}})
+db.grades.find({"type":"exam"},{"score:{"$gte":65}})
+db.grades.find({"type":"exam"},{"score:{$gte:65}})
+db.grades.find({"type":"exam"},{"score":{$gte:65}})
+db.grades.find({"score":{$gte:65}})
+db.grades.find({"type":"exam","score":{$gte:65}})
+it
+q
+db.grades.find({"type":"exam","score":{$gte:65}}).sort("score":-1)
+db.grades.find({"type":"exam","score":{$gte:65}}).sort({"score":-1})
+db.grades.find({"type":"exam","score":{$gte:65}}).sort({"score":1})
+// db.grades.find({"type":"exam","score":{$gte:65}}).sort({"score":1})
+show dbs
+db
+// db.grades.find({"type":"exam","score":{$gte:65}}).sort({"score":1}).limit(1)
+db.grades.find({"type":"exam","score":{$gte:65}}).sort({"score":1}).limit(1)
+db.grades.find({"type":"exam"})
+db.grades.find({"type":"exam"}).sort("student_id")
+db.grades.find({"type":"exam"}).sort({"student_id"})
+db.grades.find({"type":"exam"}).sort({"student_id":1})
+db.grades.find({}).sort({"student_id":1})
+db.grades.find({}).sort({"student_id":1}, "score",1)
+db.grades.find({}).sort({"student_id":1}, "score":1)
+db.grades.find({}).sort({"student_id":1}, {"score":1})
+db.grades.find({}).sort({"student_id":1,"score":1})
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1})
+db.grades.count({"type":"homework"}).sort({"student_id":1,"score":1})
+db.grades.count({"type":"homework"})
+//db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+db.grades.aggregate({"type":"homework"})
+//db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})
+db.grades.count({"type":"homework"}).sort({"student_id":1,"score":1})
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1})
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1}).limit(10)
+show dbs
+use students
+show collections
+grades.drop()
+show collections
+db.grades.drop()
+show collections
+db.grades.find({"type":"exam"},{"$gte":{"score":65}})
+db.grades.count({"type":"homework"}).sort({"student_id":1,"score":1})
+db.grades.count({"type":"homework"})
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1}).limit(10)
+db.grades.drop()
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1}).limit(10)
+use students
+show collections
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1}).limit(10)
+it
+db.grades.drop()
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1}).limit(10)
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1})
+it
+db.grades.count({"type":"homework"})
+db.grades.count({})
+db.grades.drop()
+db.grades.count({})
+db.grades.find({"type":"homework"}).sort({"student_id":1,"score":1})
+IT
+it
+IT
+db.grades.find().sort({'score':-1}).skip(100).limit(1)
+db.grades.find({},{'student_id':1, 'type':1, 'score':1, '_id':0}).sort({'student_id':1, 'score':1, }).limit(5)
+db.grades.aggregate({'$group':{'_id':'$student_id', 'average':{$avg:'$score'}}}, {'$sort':{'average':-1}}, {'$limit':1})

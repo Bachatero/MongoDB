@@ -1,0 +1,12 @@
+> db.stuff1.insert({_id:{name:"berger",class:"m101"},hometown:"NY"})
+
+db.stuff1.find()
+{ "_id" : ObjectId("50b26f9d80a78af03b5163c8"), "a" : 1, "b" : 1, "c" : 1 }
+{ "_id" : ObjectId("50b26f9d80a78af03b5163c9"), "a" : 2, "b" : 2, "c" : 1 }
+{ "_id" : ObjectId("50b26f9d80a78af03b5163ca"), "a" : 3, "b" : 3, "c" : 1 }
+{ "_id" : ObjectId("50b26f9d80a78af03b5163cb"), "a" : 3, "b" : 3, "c" : 2 }
+{ "_id" : ObjectId("50b26f9d80a78af03b5163cc"), "a" : 3, "b" : 5, "c" : 3 }
+{ "_id" : ObjectId("50b26f9d80a78af03b5163cd"), "a" : 3, "b" : 3, "c" : 2 }
+{ "_id" : { "name" : "berger", "class" : "m101" }, "hometown" : "NY" }
+> 
+

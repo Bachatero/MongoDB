@@ -1,0 +1,79 @@
+#  MongoLabs or MongoHQ services - check it out !!!
+
+# find all indexes in the database
+db.system.indexes.find
+# get indexes in the particular collection (2 variants)
+db.students.getIndexes() 
+db.students.getIndices()
+# create index
+db.students.ensureIndex({"student_id":1})
+# create unique index
+db.students.ensureIndex({"student_id":1},{unique:true})
+# create unique index & remove duplicates on the fly 
+# whatch out !!! dangerous !!! 
+db.students.ensureIndex({"student_id":1},{unique:true,dropDups:true})
+# create unique sparse index (ignores rows without the indexed column)
+db.students.ensureIndex({"student_id":1},{unique:true,sparse:true})
+# hint to use the index on "size" for sort operation
+# careful - if an index defined on the size column is sparse then
+# it won't return the rows(documents) that have no column indexed in the sparse index
+db.products.find().sort({size:1}).hint({size:1})
+# create index in the background
+db.temperature.ensureIndex({y:1},{background:true})
+# if no index should be used, so called BasicCursor
+db.products.find().sort({size:1}).hint({$natural:1})
+# drop index
+db.students.dropIndex({"student_id":1})
+# collections stats
+db.students.stats()
+# index size
+db.students.totalIndexSize()
+# explain query
+db.students.find("name":"Jenny").explain()
+#Suppose you have a 2D geospatial index defined on the key location in the collection places. Write a query that will find the closest three places (the closest three documents) to the location 74, 140.
+db.places.find({"location":{$near:[74,140]}}).limit(3)
+
+#What is the query that will query a collection named "stores" to return the stores that are within 1,000,000 meters of the location latitude=39, longitude=-130? Type the query in the box below. Assume the stores collection has a 2dsphere index on "loc" and please use the "$near" operator. Each store record looks like this: 
+{ "_id" : { "$oid" : "535471aaf28b4d8ee1e1c86f" }, "store_id" : 8, "loc" : { "type" : "Point", "coordinates" : [ -37.47891236119904, 4.488667018711567 ] } }
+
+db.stores.find({loc:{$near:{$geometry:{type: "Point",coordinates: [-130,39]},$maxDistance:1000000 }}})
+
+# dump a specific collections to a file (it goes implicitly to dump directory)
+mongodump -d blog -c posts > myposts_blog_posts.bson
+# import bson document file into a collection
+mongoimport -d blog -c posts < posts.json
+
+# create compound index -- so called multikey index
+# hw 4.3 to make the page that displays blog posts by tags fast
+db.posts.ensureIndex({tags:1,date:1})
+db.posts.find({tags:"pasta"},{"tags":1,"date":1,"_id":0})
+db.posts.find({tags:"pasta"},{"tags":1,"date":1,"_id":0}).explain()
+
+# hw 4.3 the page that displays a blog entry by permalink
+db.posts.ensureIndex({permalink:1},{unique:true})
+db.posts.find({permalink:"itCcZDaGDaJTmjkKIzDO"},{permalink:1,"_id":0}).explain()
+
+# hw 4.3 to make blog homepage fast
+db.posts.ensureIndex({date:-1})
+db.posts.find({"date":ISODate("2012-11-20T05:05:16.810Z")},{date:1,"_id":0}).explain()
+
+# print system profile information, it's stored in system cap collection which gets reused after# it grows too big
+db.system.profile.find().pretty()
+# get level of profiler 
+db.getProfilingLevel()
+# get profiling status
+db.getProfilingStatus()
+# set level of profiler -- monitor queries running over 4 seconds
+db.setProfilingLevel(1,4)
+# turn it off
+db.setProfilingLevel(0)
+
+#Write the query to look in the system profile collection for all queries that took longer than one second, ordered by timestamp descending.
+db.system.profile.find({"millis":{"$gt":1000}}).sort({ts:-1})
+
+# mongostat e.g. "indx miss" statistics
+mongostat (run from command line)
+
+# mongotop OS command similar to unix top command, lists collections read/write time avg 
+mongotop
+# sharding shard key replica sets, mongos sharding control process 

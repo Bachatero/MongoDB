@@ -1,0 +1,25 @@
+Syllabus
+Units 	Topics 	Released 	Deadline 	Lectures 	Homework
+Chapter 1: Introduction 	Introduction & Overview - Overview, Design Goals, the Mongo Shell, JSON Intro, installing tools, overview of blog project. Bottle, Pymongo 	Oct 28, 2014
+05:00 PM UTC 	Nov 04, 2014
+05:00 PM UTC 	2 hrs 	3 hrs
+Chapter 2: CRUD 	CRUD (Creating, Reading and Updating Data) - Mongo shell, query operators, update operators and a few commands 	Nov 04, 2014
+05:00 PM UTC 	Nov 11, 2014
+05:00 PM UTC 	2.5 hrs 	3 hrs
+Chapter 3: Schema Design 	Schema Design - Patterns, case studies and tradeoffs 	Nov 11, 2014
+05:00 PM UTC 	Nov 18, 2014
+05:00 PM UTC 	1 hrs 	3 hrs
+Chapter 4: Performance 	Using indexes, monitoring and understanding performance. Performance in sharded environments. 	Nov 18, 2014
+05:00 PM UTC 	Nov 25, 2014
+05:00 PM UTC 	1.75 hrs 	3 hrs
+Chapter 5: Aggregation Framework 	Goals, the use of the pipeline, comparison with SQL facilities. 	Nov 25, 2014
+05:00 PM UTC 	Dec 02, 2014
+05:00 PM UTC 	1.75 hrs 	3 hrs
+Chapter 6: Application Engineering 	Drivers, impact of replication and Sharding on design and development. 	Dec 02, 2014
+05:00 PM UTC 	Dec 09, 2014
+05:00 PM UTC 	1.5 hrs 	3 hrs
+Chapter 7: Case Studies 	Interview with Jon Hoffman, foursquare and interview with Ryan Bubinski, codecademy 	Dec 09, 2014
+05:00 PM UTC 	N/A 	1.75 hrs 	0 hrs
+Final Exam 		Dec 09, 2014
+05:00 PM UTC 	Dec 16, 2014
+05:00 PM UTC 
